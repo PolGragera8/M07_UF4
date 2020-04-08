@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('captcha-form', 'CaptchaController@captchForm');
+Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
