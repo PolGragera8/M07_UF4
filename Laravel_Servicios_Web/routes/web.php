@@ -23,3 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('captcha-form', 'CaptchaController@captchForm');
 Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
+
+Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name('social.auth');
+Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback');
+Route::get('/settings', 'SettingsController@index')->name('settings');
